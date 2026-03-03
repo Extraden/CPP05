@@ -12,6 +12,9 @@ class Bureaucrat
 
     Bureaucrat& operator=(const Bureaucrat& other);
 
+    const std::string& getName();
+    int getGrade();
+
   private:
     const std::string _name;
     int      _grade;
