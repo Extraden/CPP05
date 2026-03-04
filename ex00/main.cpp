@@ -16,7 +16,7 @@ int	main()
   try
   {
     Bureaucrat b("Maxence", 20);  
-    std::cout << b;
+    std::cout << b << "\n";
   }
   catch (const std::exception& e)
   {
