@@ -1,11 +1,27 @@
 #include <iostream>
+#include <exception>
 #include "Bureaucrat.hpp"
 
 int	main()
 {
-	std::cout << "Hello!\n";
-  Bureaucrat a("Denis", 12);
+  try
+  {
+    Bureaucrat a("Denis", 151);
+  }
+  catch (const std::exception &e)
+  {
+    std::cout << e.what() << "\n";
+  }
 
-  Bureaucrat b(a);
+  try
+  {
+    Bureaucrat b("Maxence", 20);  
+    std::cout << b;
+  }
+  catch (const std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+ 
 	return (0);
 }
