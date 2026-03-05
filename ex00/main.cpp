@@ -33,5 +33,16 @@ int	main()
   {
     std::cout << e.what() << "\n";
   }
+
+  try 
+  {
+    Bureaucrat d("Michael", 150);
+    std::cout << d << "\n";
+    d.decrementGrade();
+  }
+  catch (const std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
 	return (0);
 }
