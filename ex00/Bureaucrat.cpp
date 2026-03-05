@@ -7,37 +7,24 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
     throw GradeTooHighException();
   if (grade > 150)
     throw GradeTooLowException();
-  std::cout << "Bureaucrat " << _name << " with grade "<< _grade << " is created!\n";
 }
 
-Bureaucrat::~Bureaucrat()
-{
-  std::cout << "Bureaucrat " << _name << " is destroyed!\n";
-}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name),
-                                                  _grade(other._grade)
-{
-  std::cout << "Bureaucrat copy constructor is called!\n";
-}
+                                                  _grade(other._grade) {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
-  std::cout << "Assignment operator of Bureaucrat is called!\n";
   if (this != &other)
     this->_grade = other._grade;
   return (*this);
 }
 
-const std::string& Bureaucrat::getName() const
-{
-  return (_name);
-}
+const std::string& Bureaucrat::getName() const { return (_name); }
 
-int Bureaucrat::getGrade() const
-{
-  return (_grade);
-}
+int Bureaucrat::getGrade() const { return (_grade); }
+
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {

@@ -23,5 +23,15 @@ int	main()
     std::cout << e.what() << "\n";
   }
  
+  try
+  {
+    Bureaucrat c("Roman", 1);
+    std::cout << c << "\n";
+    c.incrementGrade();
+  }
+  catch (const std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
 	return (0);
 }
