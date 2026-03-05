@@ -2,7 +2,6 @@
 # define FORM_HPP
 
 #include <string>
-#include <cstdbool>
 #include "Bureaucrat.hpp"
 
 class Form
@@ -14,9 +13,11 @@ class Form
     Form(const Form& other);
     ~Form();
 
+    Form& operator=(const Form& other);
+
     void biSigned(Bureaucrat& b);
   private:
-    std::string _name;
+    const std::string _name;
     bool  _isSigned;
     const int _gradeToSign;
     const int _gradeToExec;
