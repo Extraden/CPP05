@@ -1,48 +1,35 @@
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
   try
   {
-    Bureaucrat a("Denis", 151);
+    Bureaucrat a("Denis", 6);  
+    std::cout << a << "\n";
+    Form  f("document", 5, 3);
+    std::cout << f << "\n";
+    a.signForm(f);
   }
-  catch (const std::exception &e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
 
+
   try
   {
-    Bureaucrat b("Maxence", 20);  
+    Bureaucrat b("Maxence", 5);  
     std::cout << b << "\n";
+    Form  f("random", 5, 3);
+    std::cout << f << "\n";
+    b.signForm(f);
   }
   catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
- 
-  try
-  {
-    Bureaucrat c("Roman", 1);
-    std::cout << c << "\n";
-    c.incrementGrade();
-  }
-  catch (const std::exception& e)
-  {
-    std::cout << e.what() << "\n";
-  }
-
-  try 
-  {
-    Bureaucrat d("Michael", 150);
-    std::cout << d << "\n";
-    d.decrementGrade();
-  }
-  catch (const std::exception& e)
-  {
-    std::cout << e.what() << "\n";
-  }
-	return (0);
+  return (0);
 }

@@ -5,6 +5,8 @@
 #include <ostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
   public:
@@ -19,6 +21,8 @@ class Bureaucrat
 
     void incrementGrade();
     void decrementGrade();
+
+    void signForm(Form& form) const;
 
     class GradeTooHighException : public std::exception
     {
