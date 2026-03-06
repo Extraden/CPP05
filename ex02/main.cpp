@@ -1,7 +1,7 @@
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int	main()
 {
@@ -9,9 +9,6 @@ int	main()
   {
     Bureaucrat a("Denis", 6);  
     std::cout << a << "\n";
-    Form  f("document", 5, 3);
-    std::cout << f << "\n";
-    a.signForm(f);
   }
   catch (const std::exception& e)
   {
@@ -23,9 +20,6 @@ int	main()
   {
     Bureaucrat b("Maxence", 5);  
     std::cout << b << "\n";
-    Form  f("random", 5, 3);
-    std::cout << f << "\n";
-    b.signForm(f);
   }
   catch (const std::exception& e)
   {
