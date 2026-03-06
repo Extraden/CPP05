@@ -21,7 +21,7 @@ class Form
     const std::string& getName() const;
     bool isSigned() const;
     int getGradeToSign() const;
-    int getGradeToExec() const;
+    int getGradeToExecute() const;
 
     // Exceptions 
     

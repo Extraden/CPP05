@@ -60,7 +60,7 @@ int Form::getGradeToSign() const
   return (_gradeToSign);
 }
 
-int Form::getGradeToExec() const
+int Form::getGradeToExecute() const
 {
   return (_gradeToExec);
 }
@@ -84,7 +84,7 @@ std::ostream& operator<<(std::ostream& os, const Form& other)
     os << "is signed, ";
   else
     os << "is not signed, ";
-  os << "grade to execute: " << other.getGradeToExec()
+  os << "grade to execute: " << other.getGradeToExecute()
       << ", grade to sign: " << other.getGradeToSign();
   return (os);
 }
