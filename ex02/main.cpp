@@ -2,26 +2,19 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main()
 {
-  try
-  {
-    Bureaucrat a("Denis", 6);  
-    std::cout << a << "\n";
-  }
-  catch (const std::exception& e)
-  {
-    std::cout << e.what() << "\n";
-  }
-
 
   try
   {
-    Bureaucrat b("Maxence", 5);  
-    std::cout << b << "\n";
-  }
-  catch (const std::exception& e)
+    Bureaucrat d("Denis", 145);  
+    ShrubberyCreationForm form("target");
+    d.signForm(form);
+    form.execute(d);
+  } 
+  catch (std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
