@@ -1,7 +1,52 @@
 #include <iostream>
+#include <exception>
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
-	std::cout << "Hello!\n";
-	return (0);
+
+  try
+  {
+    Bureaucrat d("Denis", 145);  
+    ShrubberyCreationForm form("target");
+    d.signForm(form);
+    d.executeForm(form);
+  } 
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
+
+  try
+  {
+    Bureaucrat d("Denis", 40);  
+    RobotomyRequestForm form("target");
+    d.signForm(form);
+    d.executeForm(form);
+  } 
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
+
+  try
+  {
+    Bureaucrat d("Denis", 5);  
+    PresidentialPardonForm form("target");
+    d.signForm(form);
+    d.executeForm(form);
+  } 
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
+
+  return (0);
 }

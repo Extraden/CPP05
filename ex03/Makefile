@@ -1,11 +1,10 @@
 NAME = intern
-
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = obj
 
-SRCS = main.cpp Intern.cpp
+SRCS = main.cpp Intern.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 DEPS = $(OBJS:.o=.d)
 
@@ -16,7 +15,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
 
 $(OBJ_DIR):
-	mkdir -p $@
+	mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
