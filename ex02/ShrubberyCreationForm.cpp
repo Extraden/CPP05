@@ -6,15 +6,11 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 : AForm("ShrubberyCreationForm", 145, 137), _target(target)
-
-{
-
-}
+{}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 : AForm(other), _target(other._target)
-{
-}
+{}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
@@ -29,11 +25,12 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
 
-
 void  ShrubberyCreationForm::executeAction() const
 {
   std::string filename = this->_target + "_shrubbery";
   std::ofstream f(filename.c_str());
+  if (!f)
+    throw std::runtime_error("Could not open file");
 
   f << "    *              *              *\n"
        "   ***            ***            ***\n"
