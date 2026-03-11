@@ -4,6 +4,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
@@ -32,6 +33,20 @@ int	main()
   {
     std::cout << e.what() << "\n";
   }
+
+
+  try
+  {
+    Bureaucrat d("Denis", 5);  
+    PresidentialPardonForm form("target");
+    d.signForm(form);
+    form.execute(d);
+  } 
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
 
   return (0);
 }
