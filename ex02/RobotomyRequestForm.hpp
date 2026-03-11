@@ -13,6 +13,7 @@ class RobotomyRequestForm : public AForm
 
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 
+  protected:
     virtual void executeAction() const;
     
   private:
