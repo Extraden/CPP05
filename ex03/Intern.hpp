@@ -6,7 +6,7 @@
 class Intern
 {
 	public:
-		Intern(const std::string& nameOfForm, const std::string& targetOfForm);
+		Intern();
 		Intern(const Intern& other);
 		~Intern();
 		Intern& operator=(const Intern& other);

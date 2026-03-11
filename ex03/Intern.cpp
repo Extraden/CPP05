@@ -1,6 +1,6 @@
 #include "Intern.hpp"
 
-Intern::Intern(const std::string& nameOfForm, const std::string& targetOfForm) : _nameOfForm(nameOfForm), _targetOfForm(targetOfForm)
+Intern::Intern()
 {
 }
 
