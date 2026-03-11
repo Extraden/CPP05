@@ -21,3 +21,10 @@ Intern& Intern::operator=(const Intern& other)
 	}
 	return (*this);
 }
+
+void Intern::makeForm(const std::string& name, const std::string& target)
+{
+	// TODO: should return a pointer to AForm object. Should execute according to arguments
+	(void) name;
+	(void) target;
+}
