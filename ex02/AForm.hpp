@@ -46,9 +46,11 @@ class AForm
 
     void beSigned(const Bureaucrat& b);
 
-    virtual void  execute(Bureaucrat const& executor) const = 0;
+    void  execute(Bureaucrat const& executor) const;
 
   protected:
+    virtual void executeAction() const = 0;
+
   
   private:
     const std::string _name;

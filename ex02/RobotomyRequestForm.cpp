@@ -24,12 +24,8 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
   return (*this);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const
+void RobotomyRequestForm::executeAction() const
 {
-  if (!this->isSigned())
-    throw FormNotSignedException();
-  if (executor.getGrade() > this->getGradeToExecute())
-    throw GradeTooLowException();
   std::srand(std::time(NULL));
   int res = std::rand() % 2;
   if (res == 0)
