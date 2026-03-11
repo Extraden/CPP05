@@ -14,7 +14,7 @@ int	main()
     Bureaucrat d("Denis", 145);  
     ShrubberyCreationForm form("target");
     d.signForm(form);
-    form.execute(d);
+    d.executeForm(form);
   } 
   catch (std::exception& e)
   {
@@ -27,7 +27,7 @@ int	main()
     Bureaucrat d("Denis", 40);  
     RobotomyRequestForm form("target");
     d.signForm(form);
-    form.execute(d);
+    d.executeForm(form);
   } 
   catch (std::exception& e)
   {
@@ -40,7 +40,7 @@ int	main()
     Bureaucrat d("Denis", 5);  
     PresidentialPardonForm form("target");
     d.signForm(form);
-    form.execute(d);
+    d.executeForm(form);
   } 
   catch (std::exception& e)
   {

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
@@ -66,6 +67,21 @@ void Bureaucrat::signForm(AForm& form) const
     std::cout << getName() << " couldn't sign " << form.getName()
               << " because " << e.what() << "\n"; 
   }
+}
+
+void Bureaucrat::executeForm(AForm const& form) const
+{
+  try
+  {
+    form.execute(*this);
+    std::cout << this->getName() << " executed " << form.getName() << "\n";
+
+  }
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other)
