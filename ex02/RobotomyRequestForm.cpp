@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include <string>
 #include "Bureaucrat.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -29,7 +30,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const
     throw FormNotSignedException();
   if (executor.getGrade() > this->getGradeToExecute())
     throw GradeTooLowException();
-  std::srand(time(NULL));
+  std::srand(std::time(NULL));
   int res = std::rand() % 2;
   if (res == 0)
     std::cout << "Some drilling noises, " << _target << " has been robotomized\n";
