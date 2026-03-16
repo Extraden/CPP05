@@ -62,6 +62,6 @@ AForm* Intern::makeForm(const std::string& name, const std::string& target) cons
 			return (res);
 		}
 	}
-
+	std::cout << "No matching form found\n";
 	return (NULL);
 }
