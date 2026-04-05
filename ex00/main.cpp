@@ -17,6 +17,8 @@ int	main()
   {
     Bureaucrat b("Maxence", 20);  
     std::cout << b << "\n";
+    b.incrementGrade();
+    std::cout << b << "\n";
   }
   catch (const std::exception& e)
   {
