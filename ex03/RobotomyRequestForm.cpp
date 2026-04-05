@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <ctime>
 #include <string>
 #include "Bureaucrat.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -26,7 +25,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 
 void RobotomyRequestForm::executeAction() const
 {
-  std::srand(std::time(NULL));
   int res = std::rand() % 2;
   if (res == 0)
     std::cout << "Some drilling noises, " << _target << " has been robotomized\n";
