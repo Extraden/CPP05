@@ -30,5 +30,23 @@ int	main()
   {
     std::cout << e.what() << "\n";
   }
+
+  try 
+  {
+    Form bad("bad", 0, 10);
+  }
+  catch (const std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
+
+  try 
+  {
+    Form bad2("bad2", 10, 151);
+  }
+  catch (const std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
   return (0);
 }
