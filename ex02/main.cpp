@@ -19,7 +19,7 @@ int	main()
     d.signForm(form);
     d.executeForm(form);
   } 
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
@@ -31,7 +31,7 @@ int	main()
     d.signForm(form);
     d.executeForm(form);
   } 
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
@@ -43,7 +43,7 @@ int	main()
     d.signForm(form);
     d.executeForm(form);
   } 
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
@@ -54,7 +54,7 @@ int	main()
     PresidentialPardonForm form("nobody");
     d.executeForm(form);
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
@@ -68,7 +68,7 @@ int	main()
     signer.signForm(form);
     executor.executeForm(form);
   }
-  catch (std::exception& e)
+  catch (const std::exception& e)
   {
     std::cout << e.what() << "\n";
   }
