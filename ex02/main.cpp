@@ -1,5 +1,7 @@
 #include <iostream>
 #include <exception>
+#include <ctime>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -8,6 +10,7 @@
 
 int	main()
 {
+  std::srand(std::time(NULL));
 
   try
   {
@@ -21,7 +24,6 @@ int	main()
     std::cout << e.what() << "\n";
   }
 
-
   try
   {
     Bureaucrat d("Denis", 40);  
@@ -33,7 +35,6 @@ int	main()
   {
     std::cout << e.what() << "\n";
   }
-
 
   try
   {
@@ -47,6 +48,29 @@ int	main()
     std::cout << e.what() << "\n";
   }
 
+  try
+  {
+    Bureaucrat d("Unsigned", 1);
+    PresidentialPardonForm form("nobody");
+    d.executeForm(form);
+  }
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
 
+  try
+  {
+    Bureaucrat signer("Signer", 40);
+    Bureaucrat executor("Executor", 50);
+    RobotomyRequestForm form("target2");
+
+    signer.signForm(form);
+    executor.executeForm(form);
+  }
+  catch (std::exception& e)
+  {
+    std::cout << e.what() << "\n";
+  }
   return (0);
 }
