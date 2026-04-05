@@ -18,7 +18,6 @@ int	main()
     std::cout << e.what() << "\n";
   }
 
-
   try
   {
     Bureaucrat b("Maxence", 5);  
